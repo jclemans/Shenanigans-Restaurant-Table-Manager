@@ -7,15 +7,22 @@
   </head>
   <body>
     Hello
-    <script type="text/x-handlebars" data-template-name="tables">
+    <script type="text/x-handlebars" data-template-name="index">
       <ul id="tables-list">
-      {{#each itemController="table"}}
+      {{#each tables itemController="table"}}
         <li>
           <button>{{tableNumber}}</button><button {{action "removeTable"}} class="destroy">Remove</button>
         </li>
       {{/each}}
       </ul>
       {{input type="text" id="new-table" placeholder="New table number" value=newNumber action="createTable"}}
+    <ul id="foods-list">
+    {{#each foods}}
+      <li>
+        <button>{{foodName}}</button><label>${{cost}}</label>
+      </li>
+    {{/each}}
+    </ul>
     </script>
 
     <script src="js/libs/jquery-1.10.2.min.js"></script>
@@ -24,6 +31,7 @@
     <script src="js/libs/ember-data.js"></script>
     <script src="js/application.js"></script>
     <script src="js/router.js"></script>
+    <script src="js/models/food.js"></script>
     <script src="js/models/table.js"></script>
     <script src="js/controllers/tables_controller.js"></script>
     <script src="js/controllers/table_controller.js"></script>

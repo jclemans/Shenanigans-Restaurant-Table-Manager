@@ -1,10 +1,12 @@
 Shenanigans.Router.map(function() {
-  this.resource('tables', { path: '/' });
-  this.route('foods', { path: '/' });
+  this.resource('index', { path: '/' });
 });
 
-Shenanigans.TablesRoute = Ember.Route.extend({
+Shenanigans.IndexRoute = Ember.Route.extend({
   model: function() {
-    return this.store.find('table');
+    return Ember.RSVP.hash({
+      tables: this.store.find('table'),
+      foods: this.store.find('food')
+    })
   }
 });
