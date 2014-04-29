@@ -1,10 +1,7 @@
-
-
-
 Shenanigans.Food = DS.Model.extend ({
+  tables: DS.hasMany('table'),
   foodName: DS.attr('string'),
   cost: DS.attr('number')
-
 });
 
 Shenanigans.Food.FIXTURES = [

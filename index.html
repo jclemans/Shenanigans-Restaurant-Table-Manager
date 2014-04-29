@@ -15,12 +15,12 @@
             <ul id="tables-list">
             {{#each itemController="table" }}
               <li>
-                <button>{{tableNumber}}</button><button {{action "removeTable"}} class="destroy">Remove</button>
-                {{#link-to 'table' this}}Details{{/link-to}}
+                {{#link-to 'table' this class='btn btn-success btn-xs'}}{{tableNumber}}{{/link-to}}<button {{action "removeTable"}} class="btn btn-danger btn-xs">Remove</button>
+
               </li>
             {{/each}}
             </ul>
-            {{input type="text" id="new-table" placeholder="New table number" value=newNumber action="createTable"}}
+            {{input type="text" id="new-table" placeholder="New table number" value=newNumber action="createTable" class="form-control"}}
 
           </div>
 
@@ -30,9 +30,16 @@
           </div>
         </div>
       </div>
-
     </script>
 
+    <script type="text/x-handlebars" data-template-name="table">
+      <p>Table number: {{tableNumber}}</p>
+      <ul id="foods-list">
+      {{#each foods}}
+        <li>{{foodName}}</li>
+      {{/each}}
+      </ul>
+    </script>
 
 
 
