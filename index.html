@@ -4,26 +4,37 @@
     <meta charset="utf-8">
     <title>Shenanigans Restaurant</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
   </head>
   <body>
-    Hello
-    <script type="text/x-handlebars" data-template-name="index">
-      <ul id="tables-list">
-      {{#each tables itemController="table"}}
-        <li>
-          <button>{{tableNumber}}</button><button {{action "removeTable"}} class="destroy">Remove</button>
-        </li>
-      {{/each}}
-      </ul>
-      {{input type="text" id="new-table" placeholder="New table number" value=newNumber action="createTable"}}
-    <ul id="foods-list">
-    {{#each foods}}
-      <li>
-        <button>{{foodName}}</button><label>${{cost}}</label>
-      </li>
-    {{/each}}
-    </ul>
+    <script type="text/x-handlebars" data-template-name="tables">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Tables</h2>
+            <ul id="tables-list">
+            {{#each itemController="table" }}
+              <li>
+                <button>{{tableNumber}}</button><button {{action "removeTable"}} class="destroy">Remove</button>
+                {{#link-to 'table' this}}Details{{/link-to}}
+              </li>
+            {{/each}}
+            </ul>
+            {{input type="text" id="new-table" placeholder="New table number" value=newNumber action="createTable"}}
+
+          </div>
+
+          <div class="col-md-6">
+            <h2>Table Details</h2>
+            {{outlet}}
+          </div>
+        </div>
+      </div>
+
     </script>
+
+
+
 
     <script src="js/libs/jquery-1.10.2.min.js"></script>
     <script src="js/libs/handlebars-1.0.0.js"></script>
@@ -35,6 +46,9 @@
     <script src="js/models/table.js"></script>
     <script src="js/controllers/tables_controller.js"></script>
     <script src="js/controllers/table_controller.js"></script>
+    <script src="js/controllers/foods_controller.js"></script>
+
+
 
   </body>
 

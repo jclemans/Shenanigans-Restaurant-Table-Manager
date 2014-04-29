@@ -1,3 +1,6 @@
+
+
+
 Shenanigans.Food = DS.Model.extend ({
   foodName: DS.attr('string'),
   cost: DS.attr('number')
