@@ -10,7 +10,7 @@
     <script type="text/x-handlebars" data-template-name="tables">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-3">
             <h2>Tables</h2>
             <ul id="tables-list">
             {{#each itemController="table" }}
@@ -21,7 +21,6 @@
             {{/each}}
             </ul>
             {{input type="text" id="new-table" placeholder="New table number" value=newNumber action="createTable" class="form-control"}}
-
           </div>
 
           <div class="col-md-6">
@@ -41,8 +40,6 @@
       </ul>
     </script>
 
-
-
     <script src="js/libs/jquery-1.10.2.min.js"></script>
     <script src="js/libs/handlebars-1.0.0.js"></script>
     <script src="js/libs/ember.js"></script>
@@ -54,8 +51,6 @@
     <script src="js/controllers/tables_controller.js"></script>
     <script src="js/controllers/table_controller.js"></script>
     <script src="js/controllers/foods_controller.js"></script>
-
-
 
   </body>
 
